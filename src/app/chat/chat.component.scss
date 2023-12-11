@@ -1,0 +1,63 @@
+.messagePortion {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    flex-grow: 1; padding: 5px; margin-right: 5px;
+}
+
+.header {
+    background-color: darkorange;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    vertical-align: auto;
+}
+
+.participant {
+    width: 100%;
+    background-color: orangered;
+    padding: 5px;
+    margin-bottom: 3px;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 16px;
+    border-radius: 9px;
+    padding-left: 10px;
+}
+
+.inMessage {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.inMessage p {
+    background-color: coral;
+    padding: 5px;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+}
+
+.outMessage {
+    text-align: right;
+    margin-top: 16px;
+}
+
+.outMessage p {
+    background-color: greenyellow;
+    padding: 5px;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.inMessage span, .outMessage span {
+    font-size: 0.8rem;
+}

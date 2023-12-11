@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="header mt-5">
+        <h3>Welcome to Chat Room "<span style="color: black;">{{chatRoom}}</span>"</h3>
+    </div>
+    <div style="text-align: right;">
+        <button (click)="leaveChat()" class="btn btn-danger">Leave Chat</button>
+    </div>
+    <div class="row mt-2" style="height: 600px; background-color: antiquewhite">
+        <div class="col-md-4 p-2" style="border-right: 1px solid lightgray;">
+            <h5>Participants List</h5>
+            <ul style="list-style-type:none; padding-left: 0px;" *ngFor="let user of connectedUsers">
+                <li class="participant">{{user}}</li>
+            </ul>
+        </div>
+        <div class="col-md-8 p-2 messagePortion" style="max-height: 600px; overflow: hidden;">
+            <div #scrollMe style="flex-grow: 1; overflow-y: scroll; margin-bottom: 18px;">
+                <ng-container *ngFor="let message of messages">
+                    <div
+                        [ngClass]="{'inMessage': message.user != loggedInUser, 'outMessage': message.user == loggedInUser}">
+                        <p>{{message.message}}</p>
+                        <br/>
+                        <span>{{message.user}} | {{message.messageTime | date: 'medium'}}</span>
+                    </div>
+                </ng-container>
+            </div>
+            <div style="display: flex;">
+                <input (keydown.enter)="sendMessage()" [(ngModel)]="inputMessage" type="text" calss="form-control"
+                    placeholder="Type Message Here">
+                <button (click)="sendMessage()" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
