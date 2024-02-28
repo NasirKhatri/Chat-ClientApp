@@ -9,7 +9,7 @@
         <div class="col-md-4 p-2" style="border-right: 1px solid lightgray;">
             <h5>Participants List</h5>
             <ul style="list-style-type:none; padding-left: 0px;" *ngFor="let user of connectedUsers">
-                <li class="participant">{{user}}</li>
+                <li class="participant" [ngClass]="{'active': user == loggedInUser}">{{user}}</li>
             </ul>
         </div>
         <div class="col-md-8 p-2 messagePortion" style="max-height: 600px; overflow: hidden;">
